@@ -11,3 +11,16 @@ function getComputerChoice() {
 			return "scissors";
 	}
 }
+
+
+function playRound(playerChoice, computerChoice) {
+	if (playerChoice === computerChoice) {
+		return `No one wins! You both picked ${computerChoice}.`;
+	} else if ((playerChoice === "rock" && computerChoice === "paper") ||
+		(playerChoice === "paper" && computerChoice === "scissors") ||
+		(playerChoice === "scissors" && computerChoice === "rock")) {
+			return `You lost! You picked ${playerChoice} and the computer picked ${computerChoice}.`;
+	} else {
+		return `You won! You picked ${playerChoice} and the computer picked ${computerChoice}.`;
+	}
+}
