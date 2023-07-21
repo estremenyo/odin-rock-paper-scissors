@@ -49,3 +49,13 @@ function getPlayerChoice() {
 	return playerChoice;
 }
 
+
+function game() {
+	for (var i = 0; i < 5; i++) {
+		console.log(playRound(getPlayerChoice(), getComputerChoice()));
+	}
+	
+}
+
+
+game();
