@@ -50,12 +50,12 @@ function getPlayerChoice() {
 }
 
 
-function game() {
-	for (var i = 0; i < 5; i++) {
+function game(rounds) {
+	for (var i = 0; i < rounds; i++) {
 		console.log(playRound(getPlayerChoice(), getComputerChoice()));
 	}
 	
 }
 
 
-game();
+game(2);
