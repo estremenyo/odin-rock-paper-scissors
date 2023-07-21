@@ -13,6 +13,18 @@ function getComputerChoice() {
 }
 
 
+function getPlayerChoice() {
+	let keepRunning = true;
+	let playerChoice;
+	while (keepRunning == true) {
+		playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+		(playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") ?
+		keepRunning = false : alert("Wrong input!");	
+	}	
+	return playerChoice;
+}
+
+
 function playRound(playerChoice, computerChoice) {
 	if (playerChoice === computerChoice) {
 		return `No one wins! You both picked ${computerChoice}.`;
@@ -24,3 +36,16 @@ function playRound(playerChoice, computerChoice) {
 		return `You won! You picked ${playerChoice} and the computer picked ${computerChoice}.`;
 	}
 }
+
+
+function getPlayerChoice() {
+	let keepRunning = true;
+	let playerChoice;
+	while (keepRunning == true) {
+		playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+		(playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") ?
+		keepRunning = false : alert("Wrong input!");	
+	}	
+	return playerChoice;
+}
+
