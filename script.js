@@ -4,6 +4,10 @@ buttons.forEach(button => {
 });
 
 
+function getPlayerChoice(e) {
+	playRound(e.target.dataset.choice, getComputerChoice());
+}
+
 
 function getComputerChoice() {
 	let choice = Math.floor(Math.random() * 3);
@@ -19,33 +23,40 @@ function getComputerChoice() {
 	}
 }
 
-
-function getPlayerChoice(e) {
-	console.log(e.target.dataset.choice);
-}
+let wins = 0;
+let losses = 0;
+let total = 0;
 
 
 function playRound(playerChoice, computerChoice) {
+	const result = document.querySelector("[data-p-type='result']");
+	
 	if (playerChoice === computerChoice) {
-		return `No one wins! You both picked ${computerChoice}.`;
+		total++;
+		result.textContent = `No one wins! You both picked ${computerChoice}. Score: ${wins} to ${losses}`;
 	} else if ((playerChoice === "rock" && computerChoice === "paper") ||
 	(playerChoice === "paper" && computerChoice === "scissors") ||
 	(playerChoice === "scissors" && computerChoice === "rock")) {
-		return `You lost! You picked ${playerChoice} and the computer picked ${computerChoice}.`;
+		losses++;
+		total++;
+		result.textContent = `You lost! You picked ${playerChoice} and the computer picked ${computerChoice}. Score: ${wins} to ${losses}`;
 	} else {
-		return `You won! You picked ${playerChoice} and the computer picked ${computerChoice}.`;
+		wins++;
+		total++;
+		result.textContent = `You won! You picked ${playerChoice} and the computer picked ${computerChoice}. Score: ${wins} to ${losses}`;
+	}
+
+	if (total == 5) {
+		displayWinner();
 	}
 }
 
+function displayWinner() {
+	document.querySelector("[data-p-type='header']").textContent = "Game Over!";
 
-
-
-function game(rounds) {
-	for (var i = 0; i < rounds; i++) {
-		console.log(playRound(getPlayerChoice(), getComputerChoice()));
-	}
-	
+	const result = document.querySelector("[data-p-type='result']");
+	buttons.forEach(button => button.removeEventListener("click", getPlayerChoice));
+	if (wins > losses) result.textContent = `You won the game with a score of ${wins} to ${losses} losses`; 
+	else if (wins < losses) result.textContent = `The computer won with ${losses} wins and ${wins} losses`;
+	else result.textContent = `This is unexpected. You both have ${wins} wins and ${losses} losses!`;
 }
-
-
-game(2);
