@@ -1,0 +1,38 @@
+body {
+    margin: 2.5% 5%;
+    font-family: sans-serif;
+}
+
+div.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background: slategray;
+    padding: 5px 10px;
+}
+
+button {
+    height: 70px;
+    width: 150px;
+    box-shadow: 4px 4px 5px black;
+    background: white;
+    border: 1px black;
+    margin: 30px 0px;
+    
+}
+
+button:hover {
+    background: lightyellow;
+}
+
+button:active {
+    background: yellow;
+}
+
+p {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+}

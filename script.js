@@ -1,3 +1,10 @@
+const buttons = document.querySelectorAll("[data-choice");
+buttons.forEach(button => {
+	button.addEventListener("click", getPlayerChoice)
+});
+
+
+
 function getComputerChoice() {
 	let choice = Math.floor(Math.random() * 3);
 	switch(choice) {
@@ -13,15 +20,8 @@ function getComputerChoice() {
 }
 
 
-function getPlayerChoice() {
-	let keepRunning = true;
-	let playerChoice;
-	while (keepRunning == true) {
-		playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
-		(playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") ?
-		keepRunning = false : alert("Wrong input!");	
-	}	
-	return playerChoice;
+function getPlayerChoice(e) {
+	console.log(e.target.dataset.choice);
 }
 
 
@@ -38,16 +38,6 @@ function playRound(playerChoice, computerChoice) {
 }
 
 
-function getPlayerChoice() {
-	let keepRunning = true;
-	let playerChoice;
-	while (keepRunning == true) {
-		playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
-		(playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") ?
-		keepRunning = false : alert("Wrong input!");	
-	}	
-	return playerChoice;
-}
 
 
 function game(rounds) {
