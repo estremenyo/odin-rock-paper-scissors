@@ -1,5 +1,3 @@
 # odin-rock-paper-scissors
 
-This project uses conditionals, random numbers, and input from the user
-to play a game of rock, paper, scissors. The other branch adds in
-a user interface made in HTML and CSS.
+This project allows the user to play rock, paper, scissors with the computer, updating the DOM after each round.
