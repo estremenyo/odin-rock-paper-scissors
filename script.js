@@ -56,7 +56,7 @@ function displayWinner() {
 
 	const result = document.querySelector("[data-p-type='result']");
 	buttons.forEach(button => button.removeEventListener("click", getPlayerChoice));
-	if (wins > losses) result.textContent = `You won the game with a score of ${wins} to ${losses} losses`; 
+	if (wins > losses) result.textContent = `You won the game with a score of ${wins} wins and ${losses} losses`; 
 	else if (wins < losses) result.textContent = `The computer won with ${losses} wins and ${wins} losses`;
 	else result.textContent = `This is unexpected. You both have ${wins} wins and ${losses} losses!`;
 }
